@@ -7,7 +7,7 @@ This project implements a search engine using Apache Lucene for indexing and que
 - Java (JDK 11 or later)
 - Apache Maven
 - Python (for result conversion)
-- TREC Eval (for evaluation)
+- [TREC Eval](https://github.com/usnistgov/trec_eval) (for evaluation)
 
 ## Project Structure
 
@@ -74,6 +74,12 @@ For example:
 │       ├── cran.qry            # Query file
 │       ├── cranqrel            # Qrels (relevance judgments) file
 │       └── cranqrel.readme     # Readme explaining qrel format
+├── english_index
+│   └── # index files generated using english analyser
+├── whitespace_index
+│   └── # index files generated using whitespace analyser
+├── standard_index
+│   └── # index files generated using standard analyser
 ├── results
 │   └── (output result files)
 ├── script.py                   # Python script to convert results for TREC Eval
@@ -81,3 +87,11 @@ For example:
     └── (TREC Eval executable)
 
 ```
+
+### Results
+#### Mean Average Precision (MAP) Scores plotted for each combination of Analyser + Similarity Model
+
+<img src="./plotted_results/MAP%20Graph.png" alt="MAP Scores CLustered Bar Graph" width="568">
+
+#### Precision-Recall Graph of Best Performing Combination (English Analyser with BM25 Similarity)
+![Precision-Recall Graph English Analyser + BM25](/plotted_results/Prec-Rec%20Graph.png)
